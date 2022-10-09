@@ -1,0 +1,18 @@
+#Practical for UNIX and Linux
+
+#1 counting lines in each file 
+find ../data -type f -name "*.fasta" -exec wc -l {} \;
+
+#2 Printing all lines after the first line in E-coli
+awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n"
+
+#3 Sequence length of the genome 
+awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n" | wc -c
+
+#4 Count of ATGC Sequences
+awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n" | grep -o "ATGC" | wc -l
+
+#5 Result of Chargaff's rule
+awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n"  >> new_file.fasta && a=$(cat ../data/new_file.fasta | grep -o 'A\|T' | wc -l) && b=$(cat ../data/new_file.fasta | grep -o 'G\|C' | wc -l) && echo $a / $b | bc -l
+awk 'BEGIN { a=$(cat ../data/new_file.fasta | grep -o 'A\|T' | wc -l); b=$(cat ../data/new_file.fasta | grep -o 'G\|C' | wc -l); print "(a / b) = ", ($a / $b) }'
+

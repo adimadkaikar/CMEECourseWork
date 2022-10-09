@@ -8,8 +8,12 @@
 #Arguements: 1 -> tab delimited file
 #Date: Oct 2022
 
-echo  "Creating a comma delimited version of $1 ..."
-cat $1 | tr -s "\t" "," >> $1.csv
-echo "Done!"
-
+if test -z "$1"; then 
+    echo "Please give a valid input"
+else
+    echo "It works: $1"
+    echo  "Creating a comma delimited version of $1 ..."
+    cat $1 | tr -s "\t" "," >> "../sandbox/$(basename "$1" .txt).csv"
+    echo "Done!"
+fi
 exit
