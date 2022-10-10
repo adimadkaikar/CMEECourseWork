@@ -13,6 +13,7 @@ awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n" | wc -c
 awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n" | grep -o "ATGC" | wc -l
 
 #5 Result of Chargaff's rule
-awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n"  >> new_file.fasta && a=$(cat ../data/new_file.fasta | grep -o 'A\|T' | wc -l) && b=$(cat ../data/new_file.fasta | grep -o 'G\|C' | wc -l) && echo $a / $b | bc -l
+awk '(NR>1)' ../data/E.coli.fasta | tr -d "\n"  >> ../data/new_file.fasta && a=$(cat ../data/new_file.fasta | grep -o 'A\|T' | wc -l) && b=$(cat ../data/new_file.fasta | grep -o 'G\|C' | wc -l) && echo $a / $b | bc -l
+
 awk 'BEGIN { a=$(cat ../data/new_file.fasta | grep -o 'A\|T' | wc -l); b=$(cat ../data/new_file.fasta | grep -o 'G\|C' | wc -l); print "(a / b) = ", ($a / $b) }'
 

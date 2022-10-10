@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#Author: Aditi Madkaikar arm122@ic.ac.uk
+#Script: tabtocsv.sh
+#Descripton: Basic script to learn about variables in shell scripting
+#Arguements: None
+#Date: Oct 2022
+
 ##Illustrates the use of variables
 
 #Special variables
