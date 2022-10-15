@@ -10,11 +10,11 @@
 if [[ $1 =~ .*txt.* ]]; then 
     echo "It works: $1"
     echo  "Creating a comma delimited version of $1 ..."
-    cat $1 | tr -s "\t" "," >> "../sandbox/$(basename "$1" .txt).csv"
+    cat $1 | tr -s "\t" "," >> "../results/$(basename "$1" .txt).csv"
     echo "Done!"
 
 else
-    echo "Please give a valid input"
+    echo "Please give a valid input. It should be a tab deliminated .txt file."
     exit
 fi
 exit

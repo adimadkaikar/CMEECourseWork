@@ -18,7 +18,7 @@ fi
 for f in $MY_VAR; 
     do  
         echo "Converting $f"; 
-        convert "$f"  "../data/$(basename "$f" .tiff).png"; 
+        convert "$f"  "../results/$(basename "$f" .tiff).png"; 
     done
 
 exit
