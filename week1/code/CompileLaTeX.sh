@@ -7,14 +7,13 @@
 #Date: Oct 2022
 
 if [[ $1 =~ .*tex.* ]]; then
-  echo "It's there."
+  echo "Please input a '.tex' file"
     pdflatex $1
     bibtex $(basename "$1" .tex)
     pdflatex $1
     pdflatex $1
     evince $(basename "$1" .tex).pdf
 else
-    echo "It's not there"
     pdflatex $1.tex
     bibtex $1
     pdflatex $1.tex
