@@ -39,7 +39,7 @@ echo
 
 ## Assigned VAriables; Reading(multiple values) from user input:
 
-echo "Enter teo number separated by space(s)"
+echo "Enter two number separated by space(s)"
 read a b 
 echo
 echo "you entered" $a "and" $b "; Their sum is:"
