@@ -21,7 +21,7 @@ echo $MY_VAR
 for f in $MY_VAR; 
     do  
         echo "Creating a space delimited version of $f"; 
-        cat $f | tr -s "," " " >> "../results/$(basename "$f" .txt).csv"
+        cat $f | tr -s "," " " >> "../results/$(basename "$f" .csv).txt"
         echo "Done!"
     done
 
