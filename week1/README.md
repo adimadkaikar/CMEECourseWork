@@ -19,10 +19,10 @@ This directory contains all shell scripts and files containing code which are re
 * variables.sh: Basic script to learn about variables in shell scripting. Needs no input
 
 #### Data
-This directory has all the data required by the scripts. It also contains a sample '.tiff' file for conversion from .tiff to .png. 
+This directory has all the data required by the scripts. It also contains a sample '.tiff' file for conversion from .tiff to .png. The deafult data used for 'csvtospace.sh' is in a sub-directory called Temperatures. 
 
 #### Results
-This directory contains the results given by the scripts.
+This directory id empty presently. After running all the scripts it is expected to contain the results given by the scripts.
 
 #### Sandbox
-This directory is for practice and contains practice scripts and files.
+This directory is for practice and contains practice scripts and files. On GitHub it is empty as it is not meant for submission. 
