@@ -5,7 +5,7 @@
 'week1' contains four directories namely 'code', 'data', 'results, 'sandbox'.
 
 #### Code
-This directory contains all shell scripts and files containing code which are required for submission. All the scripts have to be called using this directory as the present working directory. The following s a short description of the files present in this directory:
+This directory contains all shell scripts and files containing code which are required for submission. All the scripts have to be called using this directory as the present working directory. The following is a short description of the files present in this directory:
 
 * UnixPrac1.txt: Contains all the commands required for the FASTA exercies. All the commands are one liners. 
 * boilerplate.sh: First shell script written to understand the basic syntax. Needs no input.
