@@ -1,0 +1,5 @@
+# Igoring the cache files and history files 
+
+__pycache__
+.Rhistory
+/.idea
