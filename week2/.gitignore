@@ -1,3 +1,4 @@
 # Temporary gitignore for this week
 
-*
+*.tmp 
+*.log
