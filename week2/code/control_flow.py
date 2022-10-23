@@ -49,7 +49,7 @@ def find_all_primes(x=22):
     print(f"There are {len(allprimes)} between 2 and {x}")
     return allprimes
 
-print(even_or_odd(12))
+#print(even_or_odd(12))
 
 def main(argv):
     """Main entry point of the program"""
@@ -57,9 +57,9 @@ def main(argv):
     print(even_or_odd(33))
     print(largest_divisor_five(120))
     print(largest_divisor_five(1))
-    #print(is_prime(60))
-    #print(is_prime(59))
-    #print(find_all_primes(100))
+    print(is_prime(60))
+    print(is_prime(59))
+    print(find_all_primes(100))
     return 0
 
 if __name__ == '__main__':

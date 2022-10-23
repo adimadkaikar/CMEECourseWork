@@ -15,7 +15,7 @@ def calculate_score(s1, s2, l1, l2, startpoint):
     """
     This function calculates the best source when s1, s2, l1, l2 and the startpoint are provided. 
     It aligns the shorter sequence at the startpoint location of the longer sequence and calculates the number of matching base pairs
-    Ig you want to import this function as a module, assign the longer sequence s1, and the shorter to s2. 
+    If you want to import this function as a module, assign the longer sequence s1, and the shorter to s2. 
     l1 is length of the longest, l2 that of the shortest
     """
     matched = "" # to hold string displaying alignements

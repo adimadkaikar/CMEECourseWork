@@ -13,6 +13,7 @@ for i in birds:
     print("Latin name: ", i[0])
     print("Common name: ", i[1])
     print("Mass: ", i[2])
+    print("*****************************")
 
 # A nice example output is:
 # 

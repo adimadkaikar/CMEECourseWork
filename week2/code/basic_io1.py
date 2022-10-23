@@ -1,6 +1,5 @@
 # Open a file handle for ../sandbox/test.txt
 f = open('../sandbox/test.txt', 'r')
-
 for line in f:
     print(line)
 
