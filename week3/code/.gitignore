@@ -1,3 +1,4 @@
 # Ignoring not needed files
 
 .Rhistory
+trial*.R
