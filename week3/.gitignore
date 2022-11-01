@@ -1,3 +1,4 @@
 # Temporary gitignore for this folder
 
-*
+*.tmp 
+*.log

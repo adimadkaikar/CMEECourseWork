@@ -2,7 +2,7 @@
 
 ### This docments outlines the contents of week 2
 
-'week1' contains four directories namely 'code', 'data', 'results, 'sandbox'.
+'week2' contains four directories namely 'code', 'data', 'results, 'sandbox'.
 
 #### Code
 This directory contains all python scripts and files containing code that are required for submission. All the scripts have to be called using this directory as the present working directory. The following is a short description of the files present in this directory:
