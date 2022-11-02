@@ -1,4 +1,9 @@
 # Open a file handle for ../sandbox/test.txt
+
+"""
+This script shows opening and reading files from text files
+"""
+
 f = open('../sandbox/test.txt', 'r')
 for line in f:
     print(line)

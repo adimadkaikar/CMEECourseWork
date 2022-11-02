@@ -1,3 +1,6 @@
+"""
+Script for converting list to dictionary
+"""
 taxa = [ ('Myotis lucifugus','Chiroptera'),
          ('Gerbillus henleyi','Rodentia',),
          ('Peromyscus crinitus', 'Rodentia'),

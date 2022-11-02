@@ -1,5 +1,7 @@
 import pickle
 
+"""This script reads and writes a binary file"""
+
 my_dictionary = {" a key": 10, "another key": 11}
 f = open('../sandbox/testp.p', 'wb')
 pickle.dump(my_dictionary, f)

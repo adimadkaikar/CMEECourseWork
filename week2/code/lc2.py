@@ -1,3 +1,6 @@
+"""
+SCript for converting tuples to lists
+"""
 # Average UK Rainfall (mm) for 1910 by month
 # http://www.metoffice.gov.uk/climate/uk/datasets
 rainfall = (('JAN',111.4),

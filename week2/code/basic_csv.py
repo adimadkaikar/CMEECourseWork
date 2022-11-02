@@ -1,5 +1,7 @@
 import csv
 
+"""This script shows how to import and export basic csv files"""
+
 with open('../data/testcsv.csv', 'r') as f:
     csvread = csv.reader(f)
     temp = []

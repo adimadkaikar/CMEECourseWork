@@ -1,3 +1,6 @@
+"""
+Non-modular form of oaks
+"""
 taxa = [ 'Quercus robur',
          'Fraxinus excelsior',
          'Pinus sylvestris',
@@ -6,6 +9,9 @@ taxa = [ 'Quercus robur',
        ]
 
 def is_an_oak(name):
+    """
+    Returns True if there is an oak
+    """
     return name.lower().startswith('quercus ')
 
 oaks_loop = set()

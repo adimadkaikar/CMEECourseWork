@@ -1,3 +1,5 @@
+"""This script writes and text file"""
+
 list_to_save = range(100)
 f = open('../sandbox/testout.txt', 'w')
 for i in list_to_save:

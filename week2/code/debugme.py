@@ -1,4 +1,10 @@
-def buggyfunc(x):
+"""
+Debugging script
+"""
+def buggyfunc(x): 
+    """
+    Final debug script
+    """
     y = x
     for i in range(x):
         try: 
