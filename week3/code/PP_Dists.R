@@ -1,4 +1,7 @@
+# Cleaning the environment
 rm(list = ls())
+
+# Loading the required packages
 require(tidyverse)
 
 # Loading the data 
@@ -46,14 +49,19 @@ dev.off()
 
 # Initializing a new dataframe containing only required variables
 # Calculating log ratio
-MyNewDF <- MyDF %>% select(Predator.mass, Prey.mass)
-MyNewDF <- MyNewDF %>% mutate(log_ratio = log10(Prey.mass/Predator.mass))
-MyNewDF <- MyNewDF %>% mutate(Predator.mass = log10(Predator.mass))
-MyNewDF <- MyNewDF %>% mutate(Prey.mass = log10(Prey.mass))
+MyNewDF <- MyDF %>% select(Predator.mass, Prey.mass, Type.of.feeding.interaction)
+MyNewDF <- MyNewDF %>% mutate(log_ratio = log10(Prey.mass/Predator.mass),
+                              Predator.mass = log10(Predator.mass),
+                              Prey.mass = log10(Prey.mass))
 
 # Initializing and populating matrix with mean and median values
-new_df <- matrix(rep(NA, 6), ncol = 3)
-new_df[1,] <- apply(MyNewDF, 2, mean)
-new_df[2, ] <- apply(MyNewDF, 2, median)
+new_df <- MyNewDF %>% group_by(Type.of.feeding.interaction) %>%
+    summarise(LogPredMean = mean(Predator.mass), 
+              LogPreyMean = mean(Prey.mass),
+              LogRatioMean = mean(log_ratio),
+              LogPredMedian = median(Predator.mass),
+              LogPreyMedian = median(Prey.mass),
+              LogRatioMedian = median(log_ratio))
 
-write.csv(new_df, file = '../results/PP_results.csv')
+# Writing the csv output file    
+write.csv(new_df, file = '../results/PP_results.csv', row.names = F)

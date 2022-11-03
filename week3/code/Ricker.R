@@ -1,3 +1,7 @@
+# cleaning the environment 
+rm(list = ls())
+
+# Function to return the simulation of the Ricker model
 Ricker <- function(N0=1, r=1, k=10, generations=50){
     # Runs a simulation of the Ricker model
     # Returns a vector of length generations
@@ -9,4 +13,5 @@ Ricker <- function(N0=1, r=1, k=10, generations=50){
     return(N)
 }
 
+# Plotting the results of the simulation
 plot(Ricker(generations = 10), type ='l')

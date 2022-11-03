@@ -1,3 +1,6 @@
+# cleaning the environment 
+rm(list = ls())
+
 # Building a random matrix
 M <- matrix(rnorm(100), 10, 10)
 

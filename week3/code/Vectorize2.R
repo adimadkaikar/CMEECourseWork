@@ -1,8 +1,11 @@
 # Runs the stochastic Ricker equation with gaussian fluctuations
-
+# cleaning the environment 
 rm(list = ls())
+
+# Setting the seed 
 set.seed(123456)
 
+# Non-vectotized stochastic Ricker equation with gaussian fluctuations
 stochrick <- function(p0 = runif(1000, .5, 1.5), r = 1.2, 
                       K = 1, sigma = 0.2,numyears = 1000){
 
@@ -28,33 +31,30 @@ stochrick <- function(p0 = runif(1000, .5, 1.5), r = 1.2,
 # Now write another function called stochrickvect that vectorizes the above to
 # the extent possible, with improved performance: 
 
+# Re-setting the seed
 set.seed(123456)
+
+# Vectorized function for stochastic simulation of the Ricker model with 
+# gaussian fluctuations
 stochrickvect <- function(p0 = runif(1000, .5, 1.5), r = 1.2, 
-                          K = 1, sigma = 0.2,numyears = 10000){
+                          K = 1, sigma = 0.2,numyears = 1000){
+    # Generating empty matrix of fixed dimensions 
     N <- matrix(NA, numyears, length(p0))
+    # Assigning p0 to the first row
     N[1,] <- p0
-    V <- vector(, length(p0))
-    NextYearPop <- function(p_t,p0){
-        V <- p_t * exp(r * (1 - p_t / K) + rnorm(length(p0), 0, sigma))
-        return(V)
-    }
     
+    # Vectorizing over p0 and looping over the years
     for(i in 2:numyears){
-        #N[i,] <- NextYearPop(N[i-1], p0)
         N[i,] <- N[i-1,] * exp(r * (1 - N[i-1,] / K) + 
                                    rnorm(length(p0), 0, sigma))
     }
     return(N)
 }
 
+# Results for vectorized model
 print("Vectorized Stochastic Ricker takes:")
 print(system.time(res2<-stochrickvect()))
 
-
-#print("Not vectorized Stochastic Ricker takes:")
-#print(system.time(res1<-stochrick()))
-
-#par(mfrow=c(1,2))
-#hist(res1)
-hist(res2)
-par(mfrow=c(1,1))
+# Results for non-vectorized model
+print("Not vectorized Stochastic Ricker takes:")
+print(system.time(res1<-stochrick()))

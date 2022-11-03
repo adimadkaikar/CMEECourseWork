@@ -1,5 +1,8 @@
-i <- 0
+# Cleaning the environment
+rm(list = ls())
 
+# breaking a while loop
+i <- 0
 while(i < Inf){
     if(i == 10){
         break

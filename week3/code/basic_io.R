@@ -1,3 +1,6 @@
+# Cleaning the environment
+rm(list = ls())
+
 # A simple script to illustrate R input and output
 # Run line by line and check inputs outputs to understand what is happening
 

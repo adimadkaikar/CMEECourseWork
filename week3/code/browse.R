@@ -1,3 +1,7 @@
+# cleaning the environment 
+rm(list = ls())
+
+# Function for simulation of exponential growth
 Exponential <- function(N0 = 1, r = 1, generations = 10){
     # Runs a simulation of exponential growth
     # Returns a vector of length generations
@@ -11,4 +15,5 @@ Exponential <- function(N0 = 1, r = 1, generations = 10){
     return(N)
 }
 
+# Plotting the results
 plot(Exponential(), type = 'l', main = "Exponential Growth")

@@ -1,10 +1,26 @@
-NoPreallocFun <- function(x){
-    a <- vector()
-    for (i in 1:x){
-        a <- c(a, i)
+# Cleaning the environment
+rm(list = ls())
+
+# No preallocated way of concatenating to a vector
+NoPreallocFun <- function(x) {
+    a <- vector() # empty vector
+    for (i in 1:x) {
+        a <- c(a, i) # concatenate
         #print(a)
         #print(object.size(a))
     }
 }
 
-system.time(NoPreallocFun(100000))
+system.time(NoPreallocFun(1000))
+
+# Preallocated way of filling a vector
+PreallocFun <- function(x) {
+    a <- rep(NA, x) # pre-allocated vector
+    for (i in 1:x) {
+        a[i] <- i # assign
+        #print(a)
+        #print(object.size(a))
+    }
+}
+
+system.time(PreallocFun(1000))
