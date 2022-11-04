@@ -36,7 +36,6 @@ g <- g + scale_y_continuous(labels = c('1e-06', '1e-02', '1e+02', '1e+06'),
 
 # Setting the axes names
 g <- g + xlab("Prey mass in grams") + ylab("Predator mass in grams")
-
 g
 
 # Printing the output to a PDF file
@@ -59,6 +58,7 @@ new_df <- data.frame(Type.of.feeding.interaction = character(),
 
 # Fitting linear regressions subset-wise and saving the required values to the 
 # initialized dataframe
+
 for(inter in unique(new$Type.of.feeding.interaction)){
     for(lifestage in unique(new$Predator.lifestage)){
         tmp <- new %>%

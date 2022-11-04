@@ -39,6 +39,7 @@ The follwing packages are required to run the script:
 * tidyverse
 * maps
 * reshape2
+* sqldf
 
 Please be sure to install them in your R environment to run the scripts without errors. 
 
