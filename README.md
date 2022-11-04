@@ -9,4 +9,4 @@ Week one covers the basics of the Unix environment and shell scripting. The OS u
 Week two covers the basics of Python. Python version 3.10.6 is used for this course. Along with this, Visual Studio Code is the IDE used. The scripts and programs are present in the code directory. The data required for the codes to run is present in the data directory. The results directory is empty currently and will be populated with the outputs of the scripts and programs. The sandbox directory is empty. 
 
 ### Week 3
-Week 3 covers the basics of R. R vesion 4.1.2 ('Bird Hippie') is used. The IDE used is RStudio.  
+Week 3 covers the basics of R. R vesion 4.1.2 ('Bird Hippie') is used. The IDE used is RStudio. The scripts and one report written in LaTex and its compiled PDF file are present in the code directory. the data required to run all the scripts is present in the data dirrectory (including the images required to compile the LaTex). The results directory is currently empty and will be populated once all the scripts are run. The sandbox is empty and just for practice. 
