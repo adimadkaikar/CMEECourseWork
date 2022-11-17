@@ -1,0 +1,7 @@
+# Blocking unwated files
+
+*.png
+*.jpg
+*.jpeg
+__pycache__
+/.ipynb_checkpoints

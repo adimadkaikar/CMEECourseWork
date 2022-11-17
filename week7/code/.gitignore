@@ -1,0 +1,5 @@
+# Allowing only codepoints to be version controlled
+
+/__pycache__
+/.ipynb_checkpoints
+profires*
