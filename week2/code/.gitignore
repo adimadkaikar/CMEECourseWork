@@ -1,5 +1,6 @@
 # Igoring the cache files and history files 
 
-__pycache__
+/__pycache__
 .Rhistory
 /.idea
+/.ipynb_checkpoints
