@@ -14,7 +14,7 @@ for(ID_name in unique(data$ID)){
     data_subset <- filter(data, ID == ID_name)
     g <- ggplot(data_subset, aes(x = Time, 
                                  y = PopBio)) + 
-        geom_point()
+        geom_point() 
     g <- g + xlab('Time') + ylab('Population') + ggtitle(ID_name)
     print(g) 
 }
