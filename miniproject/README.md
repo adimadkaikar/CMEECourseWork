@@ -16,6 +16,12 @@ This directory contains all the script required to carry out the miniproject wor
 * nmfittingMiniLogis.R: THis file fites the Logistic model to the data and saves the coefficients to the dataframe initialized my nmfitting.R.
 * plotting.R: This script takes the coeffcient .csvs produced by mfitting.R and nmfitting.R and used them to predict values over multiple timepoints for the data subsets and then plots them. It generates two .pdfs, first containing exploratory plots for linear model fitting and second containg exploratory plots for non-linear model fitting.
 * comparison.R: This script comapres the AICc of the different models, generates and saves the plots required for the report.
+* report.tex: The .tex file for the report. The following packages are used for the report.
+* compileLatex.sh: The script used to compile the .tex file to a PDF report. 
+
+The following packages are required to run this workflow:
+* tidyverse
+* minpack.lm
 
 #### Data
 This directory has all the data and the metadata for the miniproject. The data modified after cleaning is also saved to this directory. Additonally, a plot for the report is saved here as it is not generated during analysis.
