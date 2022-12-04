@@ -22,7 +22,7 @@ for(ID_name in unique(data$ID)){
     data_subset <- filter(data, ID == ID_name) 
     pred_values <- data.frame(time_points = seq(min(data_subset$Time), 
                                                 max(data_subset$Time), 
-                                                by=0.01))
+                                                by=0.1))
     
     lin <- model_coef_df %>% filter(ID == ID_name) %>% 
         select(lin_slope, lin_int)
