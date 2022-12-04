@@ -18,16 +18,26 @@ This directory contains all the script required to carry out the miniproject wor
 * comparison.R: This script comapres the AICc of the different models, generates and saves the plots required for the report.
 * report.tex: The .tex file for the report. The following packages are used for the report.
 * compileLatex.sh: The script used to compile the .tex file to a PDF report. 
+* texcount.pl: This is an executable perl script. This is used to do the word count of the document. This script is not modified and used as a part of the package. 
 
 The following packages are required to run this workflow:
 * tidyverse
 * minpack.lm
 
+The following LaTex packages are required for compiling the report:
+ * babel: Used for typsetting in multiple languages.
+ * geometry: A package to change the page length and layout.
+ * amsmath: Useful for mathmetical formulae. It also enhances printed output of documents.
+ * graphicx: Used for inserting images into Latex.
+ * caption: Customizes captions in floating environments like figures and tables.
+ * subcaption: Similar function as caption but allows captions to be added for subfigures.
+ * textcomp: Supports text companion fonts which provide symbols
+ * array: Useful for making tables.
 #### Data
 This directory has all the data and the metadata for the miniproject. The data modified after cleaning is also saved to this directory. Additonally, a plot for the report is saved here as it is not generated during analysis.
 
 #### Results
-This directory id empty presently. On running the workflow, the exploratory plots and the plots required for the report will be saved here.
+This directory id empty presently. On running the workflow, the exploratory plots and the plots required for the report will be saved here. Also, the coefficients for each model will be saved as .csv files here.
 
 #### Sandbox
 This directory is for practice and contains practice scripts and files. On GitHub it is empty as it is not meant for submission. 

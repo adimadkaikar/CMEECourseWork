@@ -1,3 +1,6 @@
 # Creating gitignore for miniproject
 
 /.ipynb_checkpoints
+.Rhistory
+*.pdf
+*.ipynb
