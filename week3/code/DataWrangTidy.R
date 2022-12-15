@@ -1,6 +1,6 @@
 library(tidyverse)
 
-PoundHillData <- read_csv("~/Documents/CMEECourseWork/week3/data/PoundHillData.csv", col_names = FALSE, na = "0")
+PoundHillData <- read_csv("../week3/data/PoundHillData.csv", col_names = FALSE, na = "0")
 PoundHillData[PoundHillData == ""] <- '0'
 PoundHillData <- t(PoundHillData)
 PoundFinal <- as_tibble(PoundHillData[-1,])
