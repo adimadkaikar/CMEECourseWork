@@ -1,3 +1,19 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;)
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: timetime.py
+Descripton: Module to time the profile functions
+Arguements: None
+Date: Oct 2022
+"""
+
+__appname__ = '[Type appname here]'
+__author__ = 'Aditi Madkaiakr (arm122@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = 'None'
+
 ##############################################################################
 # loops vs. list comprehensions: which is faster?
 ##############################################################################

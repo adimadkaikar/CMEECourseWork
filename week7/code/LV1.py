@@ -2,8 +2,8 @@
 
 """
 Author: Aditi Madkaikar arm122@ic.ac.uk
-Script: boilerplate.py
-Descripton: First python program
+Script: LV1.py
+Descripton: Lotka-Volterra model for predator prey interactions
 Arguements: None
 Date: Oct 2022
 """
