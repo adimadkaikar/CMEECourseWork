@@ -1,4 +1,4 @@
 # Blocking unwanted files 
 # Unfortunately I'll have to undo this later :( sigh
 
-/.ipynb_checkpoints
+*
