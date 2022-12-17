@@ -36,11 +36,20 @@ if __name__ == '__main__':
     """
     This is the main entry point of the function. It controls  the flow of the script
     """
-    r = np.float64(sys.argv[1])
-    a = np.float64(sys.argv[2])
-    z = np.float64(sys.argv[3])
-    e = np.float64(sys.argv[4])
-    K = np.float64(sys.argv[5])
+    
+    if len(sys.argv)==6:
+        
+        r = np.float64(sys.argv[1])
+        a = np.float64(sys.argv[2])
+        z = np.float64(sys.argv[3])
+        e = np.float64(sys.argv[4])
+        K = np.float64(sys.argv[5])
+    else:
+        r = 2.
+        a = 0.1
+        z =1.5
+        e = 0.75
+        K = 100
 
     t = np.linspace(0, 200, 2000)
 
@@ -65,9 +74,9 @@ if __name__ == '__main__':
     p.xlabel('Time')
     p.ylabel('Population density')
     p.title('Consumer-Resource population dynamics')
-    p.show()
+    #p.show()
 
-    #f1.savefig('../results/LV2_model.pdf')
+    f1.savefig('../results/LV2_model.pdf')
 
     f2 = p.figure()
     p.plot(pops[:,0], pops[:,1], 'b-')
@@ -75,5 +84,5 @@ if __name__ == '__main__':
     p.xlabel('Resource density')
     p.ylabel('consumer density')
     p.title('Consumer-Resource population dynamics')
-    p.show()
-    #f2.savefig("../results/LV2_model2.pdf")
+    #p.show()
+    f2.savefig("../results/LV2_model2.pdf")
