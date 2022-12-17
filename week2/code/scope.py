@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: scope.py
+Descripton: Scope of python variables
+Arguements: None
+Date: Oct 2022
+"""
 """
 Looing for varible scops
 """

@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 
 """
-Script to align two sequences.
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: oaks_debugme.py
+Descripton: Finds all oaks in a given input file
+Arguements: None
+Date: Oct 2022
+"""
+
+"""
+Finds oaks 
 """
 
 __author__ = 'Aditi Madkaiakr (arm122@ic.ac.uk)'

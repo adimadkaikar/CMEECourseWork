@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: cfexercises2.py
+Descripton: First python functions
+Arguements: None
+Date: Oct 2022
+"""
+
 """This script illustrates functions in python"""
 
 def hello_1(x):

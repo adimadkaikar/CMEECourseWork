@@ -1,6 +1,14 @@
+#!/usr/bin/env python3
 import csv
 
-"""This script shows how to import and export basic csv files"""
+"""
+This script shows how to import and export basic csv files.
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: basic_csv.py
+Descripton: Csv input and output
+Arguements: None
+Date: Oct 2022
+"""
 
 with open('../data/testcsv.csv', 'r') as f:
     csvread = csv.reader(f)

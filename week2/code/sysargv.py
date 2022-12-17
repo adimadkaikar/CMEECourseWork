@@ -1,5 +1,13 @@
-#1/user/bin/env python3
+#!/usr/bin/env python3
 
+"""
+This is my description ;)
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: sysargv.py
+Descripton: Scope of system arguments
+Arguements: None
+Date: Oct 2022
+"""
 """
 Script checking the system arguements
 """

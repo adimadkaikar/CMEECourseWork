@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: loops.py
+Descripton: Python loops
+Arguements: None
+Date: Oct 2022
+"""
+
 """
 Script showing loops
 """

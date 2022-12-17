@@ -15,8 +15,6 @@ __version__ = '0.0.1'
 __license__ = 'None'
 
 import sys
-#import using_name
-#import control_flow
 
 def main(argv):
     """Main entry point of the program"""

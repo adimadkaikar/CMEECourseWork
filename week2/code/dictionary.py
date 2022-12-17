@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: dictionary.py
+Descripton: Dictionary comprehension
+Arguements: None
+Date: Oct 2022
+"""
+
 """
 Script for converting list to dictionary
 """
@@ -23,6 +34,7 @@ taxa = [ ('Myotis lucifugus','Chiroptera'),
 
 #### Your solution here #### 
 
+# Loopy way of populating dictionary
 taxa_dic = dict()
 for name, order in taxa:
         if order in taxa_dic:

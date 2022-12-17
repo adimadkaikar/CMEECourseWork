@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 
 """
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: control_flow.py
+Descripton: Control flow program
+Arguements: None
+Date: Oct 2022
+"""
+
+"""
 Some functions exemplifying the control of statements
 """
 

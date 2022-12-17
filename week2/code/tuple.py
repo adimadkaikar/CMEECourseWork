@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: tuple.py
+Descripton: Accessing Tupes
+Arguements: None
+Date: Oct 2022
+"""
 """
 Accessing tuples
 """

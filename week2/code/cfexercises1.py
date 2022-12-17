@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 
 """
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: cfexercises1.py
+Descripton: Control flow exercises
+Arguements: None
+Date: Oct 2022
+"""
+
+"""
 Some basic functions. Half of them calculate factorial.
 """
 

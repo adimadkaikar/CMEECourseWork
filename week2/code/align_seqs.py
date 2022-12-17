@@ -2,6 +2,11 @@
 
 """
 Script to align two sequences.
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: boilerplate.py
+Descripton: First python program
+Arguements: None
+Date: Oct 2022
 """
 
 __author__ = 'Aditi Madkaiakr (arm122@ic.ac.uk)'

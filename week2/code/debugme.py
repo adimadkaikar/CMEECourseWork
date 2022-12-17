@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: debugme.py
+Descripton: First python debugging
+Arguements: None
+Date: Oct 2022
+"""
+
 """
 Debugging script
 """

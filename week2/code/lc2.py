@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: lc2.py
+Descripton: List Comprehension 2
+Arguements: None
+Date: Oct 2022
+"""
+
 """
 SCript for converting tuples to lists
 """
