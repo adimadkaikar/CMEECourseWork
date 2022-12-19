@@ -30,6 +30,24 @@ This directory contains all python scripts and files containing code that are re
 * tuple.py: This script shows how to navigate through tuples.
 * using_name.py: It is a basic program in python usesd to show the difference between importing a program and running it independently.
 
+The following groupwork files are also present in this folder:
+
+* align_seq_fasta.py - Script to align two sequences after taking an input from user. It outputs one one best alignment in .csv format. If no input is provided it will run with defaults.
+
+* align_seq_better.py - Script to align two sequences after taking an input from user. It saves all the best alignments in binary format. If no input is provided the script will run with default arguements. 
+
+* oaks_debugme_groupwork.py - This script checks whether the TestOaksData.csv input file contains a header, prints tree species and saves only the oak species. 
+
+The following packages are used in the codes:
+
+* sys - used for taking the input parameter from command line
+
+* csv - used for reading and writing comma separated files
+
+* re - for using regular expressions in python
+
+* pickle - used for reading and writing binary files in python
+
 #### Data
 This directory has all the data required by the scripts. 
 
