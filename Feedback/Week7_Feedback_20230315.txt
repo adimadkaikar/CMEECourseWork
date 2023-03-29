@@ -1,0 +1,1117 @@
+Starting code feedback for Aditi, Week7
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 3.98 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: .git, week7, week3, week2, Feedback, miniproject, week1
+
+Found the following files in parent directory: README.md, .gitignore
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+
+**********************************************************************
+*~
+*.tmp
+*.log
+/.idea
+/.ipynb_checkpoints
+/__pycache__
+**********************************************************************
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+
+**********************************************************************
+## My CMEE Coursework Repository
+
+This GitHub repository has coursework and code for the work done during MRes in CMEE. Every week has a different folder and it contains sub-folders containing the code, data and results. 
+
+### Week 1
+Week one covers the basics of the Unix environment and shell scripting. The OS used for this course is Ubuntu 22.04 LTS. For the shell scripting, the bash shell is used. The scripts and code are present in the code directory and the data is availabe in the data directory.
+
+### Week 2
+Week two covers the basics of Python. Python version 3.10.6 is used for this course. Along with this, Visual Studio Code is the IDE used. The scripts and programs are present in the code directory. It also contains the groupwork scripts. The data required for the codes to run is present in the data directory. The results directory is empty currently and will be populated with the outputs of the scripts and programs. The sandbox directory is empty. 
+
+### Week 3
+Week 3 covers the basics of R. R vesion 4.1.2 ('Bird Hippie') is used. The IDE used is RStudio. The scripts and one report written in LaTex and its compiled PDF file are present in the code directory. It also contains the groupwork scripts. The data required to run all the scripts is present in the data dirrectory (including the images required to compile the LaTex). The results directory is currently empty and will be populated once all the scripts are run. The sandbox is empty and just for practice. 
+
+### Week 7
+Week seven covers a little advanced Python. Python version 3.10.6 is used for this course. Along with this, Visual Studio Code is the IDE used. The scripts and programs are present in the code directory. It also contains the groupwork scripts. The data required for the codes to run is present in the data directory. The results directory is empty currently and will be populated with the outputs of the scripts and programs. The sandbox directory is empty. 
+
+### Miniproject
+Miniproject is a workflow created to analyse a bacterial population growth dataset. For the analysis R(v 4.1.2: 'Bird Hippie')and RStudio IDE  were used. The scripts are all wriiten in R and a report written is written in Latex. A main run script (bash) can be used to run the entire workflow. The data and the metadata required is present in the data directory. The results directory is currently enpty but will be populated with graphs and images upon completion of the workflow. The sandox has the practice files and scripts and will always be empty.   
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 4 weekly directories: week1, week2, week3, week7
+
+The Week7 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK7...
+
+Found the following directories: code, sandbox, results, data
+
+Found the following files: README.md, .gitignore
+
+Checking for readme file in weekly directory...
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+
+**********************************************************************
+## This is the markdown for week 7
+
+### This docments outlines the contents of week 2
+
+'week7' contains four directories namely 'code', 'data', 'results, 'sandbox'.
+
+#### Code
+This directory contains all python scripts and files containing code that are required for submission. All the scripts have to be called using this directory as the present working directory. The following is a short description of the files present in this directory:
+
+* LV1.py: It is a python program which simulates the Lotka-Volterra model for predator prey interactions. It does not take the carrying capacity into account.
+* LV2.py: It is a python program which simulates the Lotka-Volterra model for predator prey interactions. It takes the carrying capacity into account.
+* profileme.py: Script which does calculations in a loopy way for many iterations.
+* profileme2.py:  Script which does calculations in a non-loopy way for many iterations.
+* run_fmr_R.py: This script runs a R script using the module subprocess.
+* timetime.py: This scripts calcualtes the run time of profileme.py and profileme2.py using the module timeit.
+* profileLV.sh: This script profiles LV1.py and LV2.py using the module cProfile.
+* fmr.R: This R script is used by another script as an input.
+
+The following groupwork files are also present in this folder:
+
+* LV3.py - Did this script as a part of groupwork by mistake!
+
+* Vectorize1.py - Python version of Vectorize1.R
+
+* Vectorize2.py - Python version of Vectorize2.R
+
+* Vectorize1.R - Vectorization in R
+
+* Vectorize2.R - Vectorization in R (part2)
+
+* compare.sh - Compare the time for four vectorization scrits.
+
+The following packages are used in the codes:
+
+* sys 
+* numpy 
+* scipy 
+* matplotlib 
+* time
+* pandas
+
+#### Data
+This directory has all the data required by the scripts. 
+
+#### Results
+This directory id empty presently. After running all the scripts it is expected to contain the results given by the scripts.
+
+#### Sandbox
+This directory is for practice and contains practice scripts and files. On GitHub it is empty as it is not meant for submission. 
+**********************************************************************
+
+Results directory is empty - good! 
+
+Found 14 code files: Vectorize2.py, LV1.py, LV2.py, profileme2.py, profileLV.sh, fmr.R, Vectorize1.py, run_fmr_R.py, profileme.py, compare.sh, Vectorize2.R, timetime.py, TestR.R, Vectorize1.R
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file Vectorize2.py...
+
+File contents are:
+
+**********************************************************************
+"""This script is a Python version of vectorize2."""
+
+__appname__ = 'Vectorize2.py'
+__author__ = 'shengge.tong22@imperial.ac.uk'
+__version__= '0.0.1'
+
+import time
+import numpy as np
+
+
+def stochrick(p0=np.random.uniform(0.5, 1.5, 1000),
+              r=1.2,
+              K=1,
+              sigma=0.2,
+              numyears=100):
+    """
+    Description: Runs the stochastic Ricker equation with gaussian fluctuations
+    Args: p0, r, K, sigma, numyears
+    output: np.array
+    """
+    N = np.zeros((numyears, len(p0)))
+    N[0, ] = p0
+    for pop in range(0, len(p0)):
+        for yr in range(1, numyears):
+            N[yr, pop] = N[yr - 1, pop] * np.exp(r * (1 - N[yr - 1, pop] / K) + np.random.normal(0, sigma, 1))[0] # add one fluctuation from normal distribution
+    return N
+
+
+def stochrickvect(p0=np.random.uniform(0.5, 1.5, 1000),
+              r=1.2,
+              K=1,
+              sigma=0.2,
+              numyears=100):
+    """
+    Description: Write another function called stochrickvect that vectorizes the above to the extent possible, with improved performance
+    Args: p0, r, K, sigma, numyears
+    output: np.array
+    """         
+    N = np.zeros((numyears, len(p0)))
+    N[0,] = p0
+    for yr in range(1, numyears):
+        N[yr, ] = N[yr - 1, ] * np.exp(r * (1 - N[yr - 1, ] / K) + np.random.normal(0, sigma, 1))[0]
+    return N
+
+
+def timing(fun, *args):
+    """
+    Description: This function is used to calculate the time cost for the script
+    Args: fun, *args
+    output: float
+    """
+    start = time.time()
+    res = fun(*args)
+    end = time.time()
+    return end - start
+
+
+print("Vectorized Stochastic Ricker takes:")
+print(timing(stochrickvect))
+
+**********************************************************************
+
+Testing Vectorize2.py...
+
+Vectorize2.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Vectorized Stochastic Ricker takes:
+0.0024700164794921875
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.15217s
+
+======================================================================
+Inspecting script file LV1.py...
+
+File contents are:
+
+**********************************************************************
+#!/usr/bin/env python3
+
+"""
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: LV1.py
+Descripton: Lotka-Volterra model for predator prey interactions
+Arguements: None
+Date: Oct 2022
+"""
+
+__appname__ = '[Type appname here]'
+__author__ = 'Aditi Madkaiakr (arm122@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = 'None'
+"""
+This module simulates the Lotka-Volterra model for population growth 
+NOT taking into account the carrying capacity.
+"""
+
+# Importing all the required modules
+import numpy as np
+from scipy import stats 
+from scipy import integrate 
+import matplotlib.pylab as p
+
+def dCR_dt(pops, t=0, r = 1., a = 0.1, z = 1.5, e = 0.75):
+    """
+    This function shows the system of differential equation for the Lotka-Volterra model
+    """
+    R = pops[0]
+    C = pops[1]
+    dRdt = r * R - a * R * C
+    dCdt = -z * C + a * e * R * C
+    
+    return np.array([dRdt, dCdt])
+
+if __name__ == '__main__':
+    """This is the main entry point of the function. It controls  the flow of the script"""
+    
+    r = 1.
+    a = 0.1
+    z =1.5
+    e = 0.75
+    t = np.linspace(0, 15, 1000)
+
+    R0 = 10
+    C0 = 5
+    RC0 = np.array([R0, C0])
+    pops, infodict = integrate.odeint(dCR_dt, RC0, t, full_output=True)
+
+    type(infodict)
+    infodict.keys()
+
+    print(infodict['message'])
+
+    f1 = p.figure()
+
+    p.plot(t, pops[:,0], 'g-', label = 'Resource density')
+    p.plot(t, pops[:, 1], 'b-', label = 'Consumer density')
+    p.grid()
+    p.legend(loc="best")
+    p.xlabel('Time')
+    p.ylabel('Population density')
+    p.title('Consumer-Resource population dynamics')
+    #p.show()
+
+    f1.savefig('../results/LV_model.pdf')
+
+    f2 = p.figure()
+    p.plot(pops[:,0], pops[:,1], 'r-')
+    p.grid()
+    p.xlabel('Resource density')
+    p.ylabel('consumer density')
+    p.title('Consumer-Resource population dynamics')
+    #p.show()
+    f2.savefig("../results/LV_model2.pdf")
+
+**********************************************************************
+
+Testing LV1.py...
+
+LV1.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Integration successful.
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 1.43446s
+
+======================================================================
+Inspecting script file LV2.py...
+
+File contents are:
+
+**********************************************************************
+#!/usr/bin/env python3
+
+"""
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: LV2.py
+Descripton: Lotka-Volterra model for predator prey interactions taking into account carrying capacity.
+Arguements: None
+Date: Oct 2022
+"""
+
+import numpy as np
+from scipy import stats 
+from scipy import integrate 
+import matplotlib.pylab as p
+import sys
+
+def dCR_dt(pops, t=0):
+    """_summary_
+
+    Args:
+        pops (int): Predator and prey population at time t
+        t (int, optional): _description_. Defaults to 0.
+
+    Returns:
+        list: List if rate of changes of redator and prey 
+    Function for LV model
+    """
+    R = pops[0]
+    C = pops[1]
+    dRdt = r * R * (1 - R/K) - a * R * C
+    dCdt = -z * C + a * e * R * C
+    
+    return np.array([dRdt, dCdt])
+
+if __name__ == '__main__':
+    """
+    This is the main entry point of the function. It controls  the flow of the script
+    """
+    
+    if len(sys.argv)==6:
+        
+        r = np.float64(sys.argv[1])
+        a = np.float64(sys.argv[2])
+        z = np.float64(sys.argv[3])
+        e = np.float64(sys.argv[4])
+        K = np.float64(sys.argv[5])
+    else:
+        r = 2.
+        a = 0.1
+        z =1.5
+        e = 0.75
+        K = 100
+
+    t = np.linspace(0, 200, 2000)
+
+    R0 = 1
+    C0 = 1
+    RC0 = np.array([R0, C0])
+
+    pops, infodict = integrate.odeint(dCR_dt, RC0, t, full_output=True)
+
+
+    print(infodict['message'])
+    print(f"The final prey population is {pops[-1,0]}")
+    print(f"The final predator population is {pops[-1,1]}")
+
+    f1 = p.figure()
+
+    p.plot(t, pops[:,0], 'g-', label = 'Resource density')
+    p.plot(t, pops[:, 1], 'b-', label = 'Consumer density')
+    p.grid()
+    p.legend(loc="best")
+    p.text(175,1.15, f'r:{r}\na:{a}\nz:{z}\ne:{e}', size=12)
+    p.xlabel('Time')
+    p.ylabel('Population density')
+    p.title('Consumer-Resource population dynamics')
+    #p.show()
+
+    f1.savefig('../results/LV2_model.pdf')
+
+    f2 = p.figure()
+    p.plot(pops[:,0], pops[:,1], 'b-')
+    p.grid()
+    p.xlabel('Resource density')
+    p.ylabel('consumer density')
+    p.title('Consumer-Resource population dynamics')
+    #p.show()
+    f2.savefig("../results/LV2_model2.pdf")
+**********************************************************************
+
+Testing LV2.py...
+
+LV2.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Integration successful.
+The final prey population is 19.999999999999837
+The final predator population is 16.000000000000068
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 1.38548s
+
+======================================================================
+Inspecting script file profileme2.py...
+
+File contents are:
+
+**********************************************************************
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: boilerplate.py
+Descripton: First python program
+Arguements: None
+Date: Oct 2022
+"""
+
+__appname__ = '[Type appname here]'
+__author__ = 'Aditi Madkaiakr (arm122@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = 'None'
+
+import numpy as np
+def my_squares(iters):
+    """
+    Makes a list of all numbers in range iter using list comprehension
+    """
+    out = [i ** 2 for i in range(iters)]
+    return out
+
+def my_join(iters, string):
+    """
+    Makes a string of length iter 
+    """
+    out = ""
+    for i in range(iters):
+        out += ", " + string
+    return out
+
+def my_squares_np(iters):
+    """ 
+    Same as my_squares but using numpy
+    """
+    a = np.arange(iters)
+    out = np.square(a)
+    return out
+
+def my_squares_np_l(iters):
+    """
+    Same as using my_squares but using numpy and loop
+    """
+    out = np.zeros(iters)
+    for i in range(iters):
+        out[i] = i ** 2
+    return out
+
+def run_my_funcs(x, y):
+    """
+    Function to run the other functions
+    """
+    print(x, y)
+    my_squares(x)
+    my_join(x, y)
+    my_squares_np(x)
+    my_squares_np_l(x)
+    return 0
+
+run_my_funcs(10000000,"My string")
+
+
+**********************************************************************
+
+Testing profileme2.py...
+
+profileme2.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+10000000 My string
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 6.80424s
+
+======================================================================
+Inspecting script file profileLV.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/bash
+
+#Author: Aditi Madkaikar arm122@ic.ac.uk
+#Script: boilerplate.sh
+#Descripton: First shell script
+#Arguements: None
+#Date: Oct 2022
+
+python3 -m cProfile -s cumtime -o ../results/profires_LV1 ../code/LV1.py
+python3 -m cProfile -s cumtime -o ../results/profires_LV2 ../code/LV2.py
+echo "The profiling results are stored in results"
+#exit
+
+**********************************************************************
+
+Testing profileLV.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Integration successful.
+Integration successful.
+The final prey population is 19.999999999999837
+The final predator population is 16.000000000000068
+The profiling results are stored in results
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 4.43320s
+
+======================================================================
+Inspecting script file fmr.R...
+
+File contents are:
+
+**********************************************************************
+# Plots log(field metabolic rate) against log(body mass) for the Nagy et al 
+# 1999 dataset to a file fmr.pdf.
+
+cat("Reading CSV\n")
+
+nagy <- read.csv('../data/NagyEtAl1999.csv', stringsAsFactors = FALSE)
+
+cat("Creating graph\n")
+pdf('../results/fmr_plot.pdf', 11, 8.5)
+col <- c(Aves='purple3', Mammalia='red3', Reptilia='green3')
+plot(log10(nagy$M.g), log10(nagy$FMR.kJ.day.1), pch=19, col=col[nagy$Class], 
+     xlab=~log[10](M), ylab=~log[10](FMR))
+for(class in unique(nagy$Class)){
+    model <- lm(log10(FMR.kJ.day.1) ~ log10(M.g), data=nagy[nagy$Class==class,])
+    abline(model, col=col[class])
+}
+dev.off()
+
+cat("Finished in R!\n")
+
+**********************************************************************
+
+Testing fmr.R...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Reading CSV
+Creating graph
+null device 
+          1 
+Finished in R!
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.23940s
+
+======================================================================
+Inspecting script file Vectorize1.py...
+
+File contents are:
+
+**********************************************************************
+"""
+Author:Shengge Tong (shengge.tong22@imperial.ac.uk)
+Date: Dec.2022
+Description: Python version of Vectorize1
+"""
+import numpy as np
+import time
+
+M = np.random.uniform(0, 1, (1000, 1000))
+
+
+def SumAllElements(M):
+    """
+    Description: Using functions to sum all the elements
+    Args: M
+    output: int
+    """
+    Dimensions = M.shape
+    Tol = 0
+    for i in range(Dimensions[0]):
+        for j in range(Dimensions[1]):
+            Tol += M[i, j]
+    return Tol
+
+
+def timing(fun, *args):
+    """
+    Description: Using timing function to calculate the time cost of the script
+    Args: fun, *args
+    output: float
+    """
+    start = time.time()
+    res = fun(*args)
+    end = time.time()
+    return end - start
+
+print("Using loops, the time taken is:")
+print(timing(SumAllElements, M))
+
+print("Using the in-built vectorized function, the time taken is:")
+print(timing(np.sum, M))
+
+**********************************************************************
+
+Testing Vectorize1.py...
+
+Vectorize1.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Using loops, the time taken is:
+0.153977632522583
+Using the in-built vectorized function, the time taken is:
+0.000606536865234375
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.31569s
+
+======================================================================
+Inspecting script file run_fmr_R.py...
+
+File contents are:
+
+**********************************************************************
+#!/usr/bin/env python
+
+
+import subprocess
+
+
+p = subprocess.Popen("Rscript ../code/fmr.R", shell=True).wait()
+if p==0:
+    print("Successful run from python!")
+else: 
+    print("Fatal error. Please fix and retry :)")
+**********************************************************************
+
+Testing run_fmr_R.py...
+
+run_fmr_R.py is a Python script file;
+
+checking for docstrings...
+
+No functions, but no script-level docstring either
+2 pts deducted
+
+Current Points = 98
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Reading CSV
+Creating graph
+null device 
+          1 
+Finished in R!
+Successful run from python!
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.26347s
+
+======================================================================
+Inspecting script file profileme.py...
+
+File contents are:
+
+**********************************************************************
+#!/usr/bin/env python3
+
+"""
+This is my description ;) 
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: profileme.py
+Descripton: Checking run time
+Arguements: None
+Date: Oct 2022
+"""
+def my_squares(iters):
+    """
+    Takes a number as input and outputs a list of squares of all numbers.
+    """
+    out = []
+    for i in range(iters):
+        out.append(i ** 2)
+    return out
+
+def my_join(iters, string):
+    """
+    Creates a string of length itter itteratively
+    """
+    out = ""
+    for i in range(iters):
+        out += string.join(", ")
+    return out
+
+def run_my_funcs(x, y):
+    """
+    Main running function
+    """
+    print(x, y)
+    my_squares(x)
+    my_join(x,y)
+    
+    return 0
+
+run_my_funcs(10000000,"My string")
+**********************************************************************
+
+Testing profileme.py...
+
+profileme.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 98
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+10000000 My string
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 4.76058s
+
+======================================================================
+Inspecting script file compare.sh...
+
+File contents are:
+
+**********************************************************************
+#!/bin/sh
+# Author:Shengge Tong shengge.tong22@imperial.ac.uk
+# Script: compare.sh
+# Desc: compare the time for four scrits 
+# Arguments: none
+# Date: Dec 2022
+
+echo "Running Vectorize1.py..."
+python3 Vectorize1.py
+
+echo "Running Vectorize2.py..."
+python3 Vectorize2.py
+
+echo "Running Vectorize1.R..."
+Rscript Vectorize1.R
+
+echo "Running Vectorize2.R..."
+Rscript Vectorize2.R
+
+**********************************************************************
+
+Testing compare.sh...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+Running Vectorize1.py...
+Using loops, the time taken is:
+0.1532580852508545
+Using the in-built vectorized function, the time taken is:
+0.0005300045013427734
+Running Vectorize2.py...
+Vectorized Stochastic Ricker takes:
+0.0026302337646484375
+Running Vectorize1.R...
+[1] "Using loops, the time taken is:"
+   user  system elapsed 
+  0.066   0.000   0.066 
+[1] "Using the in-built vectorized function, the time taken is:"
+   user  system elapsed 
+  0.001   0.000   0.001 
+Running Vectorize2.R...
+[1] "Vecto
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 1.00591s
+
+======================================================================
+Inspecting script file Vectorize2.R...
+
+File contents are:
+
+**********************************************************************
+# Runs the stochastic Ricker equation with gaussian fluctuations
+
+rm(list = ls())
+
+stochrick <- function(p0 = runif(1000, .5, 1.5), r = 1.2, K = 1, sigma = 0.2,numyears = 100)
+{
+
+  N <- matrix(NA, numyears, length(p0))  #initialize empty matrix
+
+  N[1, ] <- p0
+
+  for (pop in 1:length(p0)) { #loop through the populations
+
+    for (yr in 2:numyears){ #for each pop, loop through the years
+
+      N[yr, pop] <- N[yr-1, pop] * exp(r * (1 - N[yr - 1, pop] / K) + rnorm(1, 0, sigma)) # add one fluctuation from normal distribution
+    
+     }
+  
+  }
+ return(N)
+
+}
+
+# Now write another function called stochrickvect that vectorizes the above to
+# the extent possible, with improved performance: 
+
+rm(list = ls())
+stochrickvect <- function(p0 = runif(1000, .5, 1.5), r = 1.2, K = 1, sigma = 0.2,numyears = 100)
+{
+  N <- matrix(NA, numyears, length(p0))
+  N[1, ] <- p0
+  for (yr in 2:numyears){
+    N[yr, ] <- N[yr-1, ] * exp(r * (1 - N[yr - 1, ] / K) + rnorm(1, 0, sigma)) # add one fluctuation from normal distribution
+  }
+  return(N)
+}
+
+print("Vectorized Stochastic Ricker takes:")
+print(system.time(res2<-stochrickvect()))
+
+**********************************************************************
+
+Testing Vectorize2.R...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+[1] "Vectorized Stochastic Ricker takes:"
+   user  system elapsed 
+  0.023   0.000   0.023 
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.23538s
+
+======================================================================
+Inspecting script file timetime.py...
+
+File contents are:
+
+**********************************************************************
+#!/usr/bin/env python3
+
+"""
+This is my description ;)
+Author: Aditi Madkaikar arm122@ic.ac.uk
+Script: timetime.py
+Descripton: Module to time the profile functions
+Arguements: None
+Date: Oct 2022
+"""
+
+__appname__ = '[Type appname here]'
+__author__ = 'Aditi Madkaiakr (arm122@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = 'None'
+
+##############################################################################
+# loops vs. list comprehensions: which is faster?
+##############################################################################
+
+iters = 1000000
+
+import timeit
+
+from profileme import my_squares as my_squares_loops
+
+from profileme2 import my_squares as my_squares_lc
+
+##############################################################################
+# loops vs. the join method for strings: which is faster?
+##############################################################################
+
+mystring = "my string"
+
+from profileme import my_join as my_join_join
+
+from profileme2 import my_join as my_join
+
+import time
+start = time.time()
+my_squares_loops(iters)
+print(f"my_squares_loops takes {time.time() - start} s to run.")
+
+start = time.time()
+my_squares_lc(iters)
+print(f"my_squares_lc takes {time.time() - start} s to run.")
+**********************************************************************
+
+Testing timetime.py...
+
+timetime.py is a Python script file;
+
+checking for docstrings...
+
+Found no functions, but one docstring for the script, good
+
+Current Points = 98
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 10.00481s
+
+======================================================================
+Inspecting script file TestR.R...
+
+File contents are:
+
+**********************************************************************
+# Making the TestR file to use from subprocess
+
+print("Hello, this is R")
+print("This is the second line of prints")
+print("Trying this through subprocess now. Hopefully output gets updated")
+#print(purposely making a mistake)
+**********************************************************************
+
+Testing TestR.R...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+[1] "Hello, this is R"
+[1] "This is the second line of prints"
+[1] "Trying this through subprocess now. Hopefully output gets updated"
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.18408s
+
+======================================================================
+Inspecting script file Vectorize1.R...
+
+File contents are:
+
+**********************************************************************
+#This script is for Vectorize1
+M <- matrix(runif(1000000),1000,1000)
+
+SumAllElements <- function(M) {
+  Dimensions <- dim(M)
+  Tot <- 0
+  for (i in 1:Dimensions[1]) {
+    for (j in 1:Dimensions[2]) {
+      Tot <- Tot + M[i,j]
+    }
+  }
+  return (Tot)
+}
+
+print("Using loops, the time taken is:")
+print(system.time(SumAllElements(M)))
+
+print("Using the in-built vectorized function, the time taken is:")
+print(system.time(sum(M)))
+
+**********************************************************************
+
+Testing Vectorize1.R...
+
+Output (only first 500 characters): 
+
+
+**********************************************************************
+[1] "Using loops, the time taken is:"
+   user  system elapsed 
+  0.067   0.000   0.067 
+[1] "Using the in-built vectorized function, the time taken is:"
+   user  system elapsed 
+  0.001   0.000   0.001 
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.31827s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 0 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 98
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
